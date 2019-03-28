@@ -30,4 +30,5 @@
 <!--Pull footer content via php-->
 <?php 
     include $path.'../assets/inc/footer.php';
+
 ?>

@@ -1,4 +1,3 @@
-
 <!--Pull page head via php-->
 <?php
     $path = './';
@@ -31,4 +30,5 @@
 <!--Pull footer content via php-->
 <?php 
     include $path.'../assets/inc/footer.php';
+
 ?>
