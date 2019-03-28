@@ -64,7 +64,7 @@
                 var list = document.getElementsByTagName("UL")[0];
                 var listArray = list.getElementsByTagName("A");
                 
-                for( var i = 0; i < listArray.length; i++){
+                for(var i = 0; i < listArray.length; i++){
                     
                     listArray[i].style.color = "white";
                     if(listArray[i].matches('.active')){
@@ -75,4 +75,3 @@
         }
     </script>
 </head>
-<body>

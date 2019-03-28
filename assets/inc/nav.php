@@ -1,3 +1,4 @@
+
 <div id="top"></div>
     <header id="stick">
         <div id="head">
@@ -23,5 +24,5 @@
                     </ul>   
                 </div><!-- End of div for the navigation bar -->
             </div><!-- End of div for the headContent -->
-        </div><!-- End of div for the head -->       
+        </div><!-- End of div for the head -->    
     </header><!-- End of Header -->
