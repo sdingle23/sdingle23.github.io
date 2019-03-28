@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Zesty Penguin</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,900" rel="stylesheet">
+    <script src="../assets/js/menuhider.js"></script> 
+    <script src="../assets/js/dropdown.js"></script> 
+    <script>
+        window.onscroll = function(){
+            console.log("send help");
+            var count = 300;
+            var main = document.getElementById('main');
+            var x = main.scrollTop;
+            console.log(x);
+            if (count < x) {
+                    document.getElementById(mainText).style.color="blue";
+                    console.log("Does this if work");
+            }
+        }
+        
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 570 || document.documentElement.scrollTop > 570) {
+                document.getElementById("quickTop").style.display = "block";
+                document.getElementById("head").style.backgroundColor = "white";
+                document.getElementById("headColor").style.opacity = 0;
+                document.getElementById("head").style.borderBottom= "solid"; 
+                document.getElementById("head").style.borderColor = "orange";
+                
+                var list = document.getElementsByTagName("UL")[0];
+                
+                
+                var listArray = list.getElementsByTagName("A");
+                
+                for( var i = 0; i < listArray.length; i++){
+                    
+                   listArray[i].style.color = "black";
+                    
+                    if(listArray[i].matches('.active')){
+                        listArray[i].style.borderColor = "black";
+                    }//end if statement
+                }//End for loop
+            } 
+            else {
+                document.getElementById("quickTop").style.display = "none";
+                document.getElementById("head").style.background = "none";
+                document.getElementById("head").style.border= "none";
+                document.getElementById("head").style.backgroundColor = "";
+                document.getElementById("headColor").style.opacity = 0.6;  
+                
+                var list = document.getElementsByTagName("UL")[0];
+                var listArray = list.getElementsByTagName("A");
+                
+                for( var i = 0; i < listArray.length; i++){
+                    
+                    listArray[i].style.color = "white";
+                    if(listArray[i].matches('.active')){
+                        listArray[i].style.borderColor = "white";
+                    }//end if statement
+                }//end for loop
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="top"></div>
+    <header id="stick">
+        <div id="head">
+            <div id="headColor">
+            </div><!-- End of< div for the headColor -->
+            <div id="headContent">
+                <img src=../assets/images/logo2.png alt="logo" id="logo">
+                <div id="navBar" class="topnav">
+                    <ul>
+                        <li><a href="index.php" class="active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">How To &#9660;</a>
+                            <div class="dropdown-content" id="myDropdown">
+                              <a href="linuxcommands.php">Linux Commands</a>
+                              <a href="linuxinstall.php">Linux Installation</a>
+                              <a href="applications.php">Installing Apps</a>
+                              <a href="#">Running VMware</a>
+                            </div>
+                          </li>
+                        <li><a href="#">Fun With Linux</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="javascript:void(0);" class="icon" onclick="menuHider()">&#9776;</a></li>
+                    </ul>   
+                </div><!-- End of div for the navigation bar -->
+            </div><!-- End of div for the headContent -->
+        </div><!-- End of div for the head -->       
+    </header><!-- End of Header -->
+    <div id="hero">
+        <div id="heroText">  
+            <h1>
+                Running VMware & Other Non-Linux Applications
+            </h1>
+        </div>
+    </div>
+    <div id="back"></div>
+    <div id="main">
+        <div id="mainText">
+            <h1></h1>
+            <p>
+                Despite many applications not being designed to run on Linux there are several ways to make Windows, OS X, or non-linux applications run properly on Linux systems. Through either using emulators like Wine, or through Virtual Machines, one is able to run non-Linux programs can be run just as efficiently as if they were run on their native operating systems.
+            </p>
+            <br>
+            <div id="picBox"><img id="pic" src="../assets/images/wineemul.png" alt="Wine Emulator" title="Wine Emulator"></div>
+            <h2>Wine Emulator</h2>
+            <p>
+                The Wine Emulator is an open source project designed to allow Linux users to make any non Linux ported Windows application, program, or software, runnable on Linux machines. First released in 1993, it has allowed many non Linux programs to be used on nearly all Linux distributions. As of 2018, it has been optimised to allow use for of Windows applications from Microsoft Word, to even allowing Windows only video games to run directly on Linux machines.
+            </p>
+            <div id="picBox"><img id="pic" src="../assets/images/vmware.png" alt="VMware" title="VMware"></div>
+            <h2>VMware</h2>
+            <p>
+                VMware is a proprietary virtual machine software that allows users to use complete virtual machines of non Linux systems on their own system. VMware allows users to operate a full Windows, OS X, Linux, or any other OS system directly without actually installing a new operating system onto the machine.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <a id="quickTop" href="#top">&#x2191;</a>
+    </footer>
+</body>    
+</html>
